@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="ru.d3st.socionic.start.StartFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/splash_back">
+
+        <ImageView
+            android:id="@+id/iv_label"
+            android:layout_width="@dimen/label_size"
+            android:layout_height="@dimen/label_size"
+            android:layout_marginTop="@dimen/double_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription"
+            tools:srcCompat="@drawable/vector_label" />
+
+        <Button
+            android:id="@+id/btn_fast"
+            style="@style/RoundedCornerButton"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/btn_main_height"
+            android:layout_marginStart="@dimen/margin_36"
+            android:layout_marginTop="200dp"
+            android:layout_marginEnd="@dimen/margin_36"
+            android:text="@string/fast_start"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button2"
+            style="@style/RoundedCornerButton"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/btn_main_height"
+            android:layout_marginTop="16dp"
+            android:text="@string/full_test"
+            app:layout_constraintEnd_toEndOf="@+id/btn_fast"
+            app:layout_constraintStart_toStartOf="@+id/btn_fast"
+            app:layout_constraintTop_toBottomOf="@+id/btn_fast" />
+
+        <Button
+            android:id="@+id/button3"
+            style="@style/RoundedCornerButton"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/btn_main_height"
+            android:layout_marginTop="16dp"
+            android:text="@string/compatibility"
+            app:layout_constraintEnd_toEndOf="@+id/button2"
+            app:layout_constraintStart_toStartOf="@+id/button2"
+            app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+        <ImageView
+            android:id="@+id/iv_circle_left"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="@dimen/double_margin"
+            app:layout_constraintEnd_toStartOf="@+id/iv_circle_right"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button3"
+            app:srcCompat="@drawable/circle_purple"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/iv_qu_an"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_circle_left"
+            app:layout_constraintEnd_toEndOf="@+id/iv_circle_left"
+            app:layout_constraintStart_toStartOf="@+id/iv_circle_left"
+            app:layout_constraintTop_toTopOf="@+id/iv_circle_left"
+            app:srcCompat="@drawable/quan"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/iv_circle_right"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="@dimen/double_margin"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/iv_circle_left"
+            app:layout_constraintTop_toBottomOf="@+id/button3"
+            app:srcCompat="@drawable/circle_purple"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="68dp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_circle_right"
+            app:layout_constraintEnd_toEndOf="@+id/iv_circle_right"
+            app:layout_constraintStart_toStartOf="@+id/iv_circle_right"
+            app:layout_constraintTop_toTopOf="@+id/iv_circle_right"
+            app:srcCompat="@drawable/question"
+            tools:ignore="ContentDescription" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

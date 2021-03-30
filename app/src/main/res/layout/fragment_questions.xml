@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/splash_back">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/line_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="@dimen/double_margin" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/line_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/double_margin" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/line_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/double_margin" />
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/ic_back_button"
+            app:layout_constraintStart_toStartOf="@+id/line_left"
+            app:layout_constraintTop_toTopOf="@+id/line_up" />
+
+        <ImageView
+            android:id="@+id/iv_circle_yellow"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/line_up"
+            app:srcCompat="@drawable/circle_yellow"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tv_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/mountains_of_christmas"
+            android:text="@string/number_example"
+            android:textColor="@color/purple_text"
+            android:textSize="48sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_circle_yellow"
+            app:layout_constraintEnd_toEndOf="@+id/iv_circle_yellow"
+            app:layout_constraintStart_toStartOf="@+id/iv_circle_yellow"
+            app:layout_constraintTop_toTopOf="@+id/line_up" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:progress="48"
+            android:progressBackgroundTint="@color/yellow_text"
+            android:progressTint="@color/purple_text"
+            app:layout_constraintEnd_toStartOf="@+id/line_right"
+            app:layout_constraintStart_toStartOf="@+id/line_left"
+            app:layout_constraintTop_toBottomOf="@+id/iv_circle_yellow" />
+
+        <TextView
+            android:id="@+id/tv_question"
+            android:layout_width="347dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/btn_main_height"
+            android:background="@drawable/rounded_button"
+            android:fontFamily="@font/montserrat_500"
+            android:gravity="center"
+            android:padding="@dimen/margin_one"
+            android:text="@string/question_example"
+            android:textColor="@color/purple_text"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/line_right"
+            app:layout_constraintStart_toStartOf="@+id/line_left"
+            app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+
+        <Button
+            android:id="@+id/btn_yes"
+            style="@style/RoundedCornerButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:fontFamily="@font/montserrat_500"
+            android:text="@string/yes"
+            app:layout_constraintEnd_toStartOf="@+id/btn_no"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_question" />
+
+        <Button
+            android:id="@+id/btn_no"
+            style="@style/RoundedCornerButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:fontFamily="@font/montserrat_500"
+            android:text="@string/no"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btn_yes"
+            app:layout_constraintTop_toBottomOf="@+id/tv_question" />
+
+        <Button
+            android:id="@+id/btn_previous"
+            style="@style/PreviousButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="100dp"
+            android:drawableStart="@drawable/ic_vector_left"
+            android:text="@string/previous"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/line_left" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
