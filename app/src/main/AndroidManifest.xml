@@ -3,7 +3,9 @@
     package="ru.d3st.socionic">
 
     <application
+        android:name="ru.d3st.socionic.MainApplication"
         android:allowBackup="true"
+        android:fullBackupContent="@xml/backup_descriptor"
         android:icon="@drawable/user"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"

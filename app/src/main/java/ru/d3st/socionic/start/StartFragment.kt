@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import ru.d3st.socionic.databinding.FragmentStartBinding
 
 class StartFragment : Fragment() {
@@ -22,6 +23,15 @@ class StartFragment : Fragment() {
                 container,
                 false)
 
+        binding.btnFast.setOnClickListener {
+            navigateToFastGame()
+        }
+
         return binding.root
+    }
+
+    private fun navigateToFastGame() {
+        val action = StartFragmentDirections.actionStartFragmentToQuestionsFragment()
+        findNavController().navigate(action)
     }
 }

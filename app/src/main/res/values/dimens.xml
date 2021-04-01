@@ -7,4 +7,5 @@
     <dimen name="btn_main_height">65dp</dimen>
     <dimen name="margin_one">16dp</dimen>
     <dimen name="label_size">80dp</dimen>
+    <dimen name="avatar_size">160dp</dimen>
 </resources>
