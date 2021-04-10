@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/startFragment">
+    app:startDestination="@id/splashFragment">
 
     <fragment
         android:id="@+id/startFragment"
@@ -13,6 +13,12 @@
         <action
             android:id="@+id/action_startFragment_to_questionsFragment"
             app:destination="@id/questionsFragment" />
+        <action
+            android:id="@+id/action_startFragment_to_fragmentOverview"
+            app:destination="@id/fragmentOverview" />
+        <action
+            android:id="@+id/action_startFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
     </fragment>
     <fragment
         android:id="@+id/questionsFragment"
@@ -21,13 +27,46 @@
         <action
             android:id="@+id/action_questionsFragment_to_fragmentDetail"
             app:destination="@id/fragmentDetail" />
+        <action
+            android:id="@+id/action_questionsFragment_to_startFragment"
+            app:destination="@id/startFragment" />
     </fragment>
     <fragment
         android:id="@+id/fragmentDetail"
-        android:name="ru.d3st.socionic.detail.FragmentDetail"
+        android:name="ru.d3st.socionic.detail.DetailFragment"
         android:label="FragmentDetail" >
         <argument
             android:name="resultId"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_fragmentDetail_to_questionsFragment"
+            app:destination="@id/questionsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentOverview"
+        android:name="ru.d3st.socionic.overview.FragmentOverview"
+        android:label="FragmentOverview" >
+        <action
+            android:id="@+id/action_fragmentOverview_to_fragmentDetail"
+            app:destination="@id/fragmentDetail" />
+        <action
+            android:id="@+id/action_fragmentOverview_to_startFragment"
+            app:destination="@id/startFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="ru.d3st.socionic.about.AboutFragment"
+        android:label="AboutFragment" >
+        <action
+            android:id="@+id/action_aboutFragment_to_startFragment"
+            app:destination="@id/startFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="ru.d3st.socionic.start.SplashFragment"
+        android:label="SplashFragment" >
+        <action
+            android:id="@+id/action_splashFragment_to_startFragment"
+            app:destination="@id/startFragment" />
     </fragment>
 </navigation>

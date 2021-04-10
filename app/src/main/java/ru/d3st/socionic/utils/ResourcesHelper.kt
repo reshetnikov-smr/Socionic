@@ -131,9 +131,7 @@ class ResourcesHelper @Inject constructor(applicationContext: Application) {
                     Pair(Pair(BranchName.B, BranchName.D), questionsBD),
             )
 
-    companion object
-
-        val characters = listOf(
+    val characters = listOf(
             ResultCharacter(
                     101,
                     "Наполеон",
@@ -147,7 +145,7 @@ class ResourcesHelper @Inject constructor(applicationContext: Application) {
                     "Жуков",
                     "СЛЭ",
                     "Сэнсорно-логический экстраверт",
-                    R.drawable.juckov,
+                    R.drawable.jukov,
                     res.getString(R.string.desc_juckov)
             ),
             ResultCharacter(
@@ -163,7 +161,7 @@ class ResourcesHelper @Inject constructor(applicationContext: Application) {
                     "Дон Кихот",
                     "ИЛЭ",
                     "Интуитивно-логический экстраверт",
-                    R.drawable.don2,
+                    R.drawable.don_kihot,
                     res.getString(R.string.desc_don)
             ),
             ResultCharacter(
@@ -203,7 +201,7 @@ class ResourcesHelper @Inject constructor(applicationContext: Application) {
                     "Гюго",
                     "ЭСЭ",
                     "Этико-сенсорный экстраверт",
-                    R.drawable.gugo,
+                    R.drawable.hugo,
                     res.getString(R.string.desc_gugo)
             ),
             ResultCharacter(
@@ -219,7 +217,7 @@ class ResourcesHelper @Inject constructor(applicationContext: Application) {
                     "Штирлиц",
                     "ЛСЭ",
                     "Логико-сенсорный экстраверт",
-                    R.drawable.shtirlic,
+                    R.drawable.shtirliz,
                     res.getString(R.string.desc_shtirlic)
             ),
             ResultCharacter(
@@ -227,7 +225,7 @@ class ResourcesHelper @Inject constructor(applicationContext: Application) {
                     "Джек Лондон",
                     "ЛИЭ",
                     "Логико-интуитивный экстраверт",
-                    R.drawable.jack,
+                    R.drawable.london,
                     res.getString(R.string.desc_jack)
             ),
             ResultCharacter(
@@ -243,7 +241,7 @@ class ResourcesHelper @Inject constructor(applicationContext: Application) {
                     "Достоевский",
                     "ЭИИ",
                     "Этико-интуитивный интроверт",
-                    R.drawable.dosoevski,
+                    R.drawable.dostoevskiy,
                     res.getString(R.string.desc_dostoevski)
             ),
             ResultCharacter(
@@ -251,7 +249,7 @@ class ResourcesHelper @Inject constructor(applicationContext: Application) {
                     "Робеспьер",
                     "ЛИИ",
                     "Логико-интуитивный интроверт",
-                    R.drawable.rob,
+                    R.drawable.robespiere,
                     res.getString(R.string.desc_rob)
             ),
             ResultCharacter(
@@ -259,11 +257,9 @@ class ResourcesHelper @Inject constructor(applicationContext: Application) {
                     "Максим Горький",
                     "ЛСИ",
                     "Логико-сенсорный интроверт",
-                    R.drawable.max2,
+                    R.drawable.gorkiy,
                     res.getString(R.string.desc_max)
             ),
-
-
     )
 }
 

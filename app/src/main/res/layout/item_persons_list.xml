@@ -1,33 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="150dp"
-    android:layout_height="200dp">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <ImageView
-        android:id="@+id/iv_portrait_person"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ContentDescription"
-        tools:src="@drawable/dosoevski" />
+    <data>
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@color/purple_text"
-        android:gravity="center"
-        android:padding="4dp"
-        android:text="@string/dostoevsky"
-        android:textColor="@color/yellow_text"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_portrait_person"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <variable
+            name="character"
+            type="ru.d3st.socionic.domain.ResultCharacter" />
+    </data>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:transitionName="@{@string/character_card_transition_name(character.id)}"
+            android:layout_width="@dimen/width_rv_character"
+            android:layout_height="200dp"
+            android:foregroundGravity="center"
+            android:layout_marginBottom="@dimen/half_margin">
+
+            <ImageView
+                android:id="@+id/iv_portrait_person"
+                android:src="@{character.portrait}"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription"
+                tools:src="@drawable/dostoevskiy" />
+
+            <TextView
+                android:id="@+id/person"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/purple_text"
+                android:gravity="center"
+                android:padding="4dp"
+                android:text="@{character.name}"
+                android:textColor="@color/yellow_text"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_portrait_person"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="@string/dostoevsky" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

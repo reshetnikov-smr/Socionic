@@ -34,7 +34,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btn_full"
             style="@style/RoundedCornerButton"
             android:layout_width="0dp"
             android:layout_height="@dimen/btn_main_height"
@@ -45,15 +45,15 @@
             app:layout_constraintTop_toBottomOf="@+id/btn_fast" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/btn_overview"
             style="@style/RoundedCornerButton"
             android:layout_width="0dp"
             android:layout_height="@dimen/btn_main_height"
             android:layout_marginTop="16dp"
             android:text="@string/compatibility"
-            app:layout_constraintEnd_toEndOf="@+id/button2"
-            app:layout_constraintStart_toStartOf="@+id/button2"
-            app:layout_constraintTop_toBottomOf="@+id/button2" />
+            app:layout_constraintEnd_toEndOf="@+id/btn_full"
+            app:layout_constraintStart_toStartOf="@+id/btn_full"
+            app:layout_constraintTop_toBottomOf="@+id/btn_full" />
 
         <ImageView
             android:id="@+id/iv_circle_left"
@@ -64,7 +64,7 @@
             app:layout_constraintEnd_toStartOf="@+id/iv_circle_right"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button3"
+            app:layout_constraintTop_toBottomOf="@+id/btn_overview"
             app:srcCompat="@drawable/circle_purple"
             tools:ignore="ContentDescription" />
 
@@ -88,7 +88,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/iv_circle_left"
-            app:layout_constraintTop_toBottomOf="@+id/button3"
+            app:layout_constraintTop_toBottomOf="@+id/btn_overview"
             app:srcCompat="@drawable/circle_purple"
             tools:ignore="ContentDescription" />
 

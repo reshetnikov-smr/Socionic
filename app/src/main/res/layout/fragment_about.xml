@@ -1,6 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="@dimen/margin_24"
+        android:layout_marginTop="@dimen/margin_36"
+        android:background="@drawable/ic_back_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/gradient_back"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/q_and_a"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="@dimen/margin_one"
+                android:layout_marginBottom="@dimen/margin_one"
+                app:srcCompat="@drawable/quan"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/about_app"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/purple_text"
+                android:gravity="center"
+                android:paddingTop="@dimen/half_margin"
+                android:paddingBottom="@dimen/half_margin"
+                android:text="@string/about_app"
+                android:textColor="@color/yellow_text"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tv_desc_app"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserat_200"
+                android:paddingStart="@dimen/margin_24"
+                android:paddingTop="@dimen/half_margin"
+                android:paddingEnd="@dimen/margin_24"
+                android:paddingBottom="@dimen/half_margin"
+                android:text="@string/this_is_socionics"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/about_psychotype"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/purple_text"
+                android:gravity="center"
+                android:paddingTop="@dimen/half_margin"
+                android:paddingBottom="@dimen/half_margin"
+                android:text="@string/what_psychotype"
+                android:textColor="@color/yellow_text"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tv_desc_psichotype"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserat_200"
+                android:paddingStart="@dimen/margin_24"
+                android:paddingTop="@dimen/half_margin"
+                android:paddingEnd="@dimen/margin_24"
+                android:paddingBottom="@dimen/half_margin"
+                android:text="@string/desc_psychotype"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
+
