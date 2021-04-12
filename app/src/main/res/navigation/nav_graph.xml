@@ -44,7 +44,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentOverview"
-        android:name="ru.d3st.socionic.overview.FragmentOverview"
+        android:name="ru.d3st.socionic.overview.OverviewFragment"
         android:label="FragmentOverview" >
         <action
             android:id="@+id/action_fragmentOverview_to_fragmentDetail"
@@ -52,6 +52,12 @@
         <action
             android:id="@+id/action_fragmentOverview_to_startFragment"
             app:destination="@id/startFragment" />
+        <argument
+            android:name="category"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_fragmentOverview_to_compatibilityFragment"
+            app:destination="@id/compatibilityFragment" />
     </fragment>
     <fragment
         android:id="@+id/aboutFragment"
@@ -68,5 +74,30 @@
         <action
             android:id="@+id/action_splashFragment_to_startFragment"
             app:destination="@id/startFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/compatibilityFragment"
+        android:name="ru.d3st.socionic.compability.list.CompatibilityFragment"
+        android:label="CompatibilityFragment" >
+        <argument
+            android:name="characterId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_compatibilityFragment_to_comparisonFragment"
+            app:destination="@id/comparisonFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/comparisonFragment"
+        android:name="ru.d3st.socionic.compability.comparison.ComparisonFragment"
+        android:label="ComparisonFragment" >
+        <argument
+            android:name="main"
+            app:argType="integer" />
+        <argument
+            android:name="secondary"
+            app:argType="integer" />
+        <argument
+            android:name="compat"
+            app:argType="string" />
     </fragment>
 </navigation>

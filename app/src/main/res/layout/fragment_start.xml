@@ -6,19 +6,30 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/splash_back">
+        android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/iv_label"
-            android:layout_width="@dimen/label_size"
-            android:layout_height="@dimen/label_size"
-            android:layout_marginTop="@dimen/double_margin"
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/height_back_long"
+            android:adjustViewBounds="false"
+            android:cropToPadding="false"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="ContentDescription"
-            tools:srcCompat="@drawable/vector_label" />
+            app:srcCompat="@drawable/back_night_long"
+            tools:ignore="ContentDescription" />
+
+        <include
+            android:id="@+id/logo"
+            layout="@layout/logo_set"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
 
         <Button
             android:id="@+id/btn_fast"
@@ -29,6 +40,7 @@
             android:layout_marginTop="200dp"
             android:layout_marginEnd="@dimen/margin_36"
             android:text="@string/fast_start"
+            android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -40,6 +52,7 @@
             android:layout_height="@dimen/btn_main_height"
             android:layout_marginTop="16dp"
             android:text="@string/full_test"
+            android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="@+id/btn_fast"
             app:layout_constraintStart_toStartOf="@+id/btn_fast"
             app:layout_constraintTop_toBottomOf="@+id/btn_fast" />
@@ -51,6 +64,7 @@
             android:layout_height="@dimen/btn_main_height"
             android:layout_marginTop="16dp"
             android:text="@string/compatibility"
+            android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="@+id/btn_full"
             app:layout_constraintStart_toStartOf="@+id/btn_full"
             app:layout_constraintTop_toBottomOf="@+id/btn_full" />
@@ -65,7 +79,7 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btn_overview"
-            app:srcCompat="@drawable/circle_purple"
+            app:srcCompat="@drawable/circle_yellow"
             tools:ignore="ContentDescription" />
 
         <ImageView
@@ -89,18 +103,18 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/iv_circle_left"
             app:layout_constraintTop_toBottomOf="@+id/btn_overview"
-            app:srcCompat="@drawable/circle_purple"
+            app:srcCompat="@drawable/circle_yellow"
             tools:ignore="ContentDescription" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/iv_head"
             android:layout_width="wrap_content"
             android:layout_height="68dp"
             app:layout_constraintBottom_toBottomOf="@+id/iv_circle_right"
             app:layout_constraintEnd_toEndOf="@+id/iv_circle_right"
             app:layout_constraintStart_toStartOf="@+id/iv_circle_right"
             app:layout_constraintTop_toTopOf="@+id/iv_circle_right"
-            app:srcCompat="@drawable/question"
+            app:srcCompat="@drawable/head_question"
             tools:ignore="ContentDescription" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

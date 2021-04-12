@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
     <data>
+
         <variable
             name="viewmodel"
             type="ru.d3st.socionic.overview.OverviewViewModel" />
@@ -11,8 +12,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/splash_back">
+        android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/line_up"
@@ -35,37 +35,44 @@
             android:orientation="vertical"
             app:layout_constraintGuide_end="@dimen/double_margin" />
 
+        <ImageView
+            android:id="@+id/iv_background"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/height_back_long"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/back_night_long"
+            tools:ignore="ContentDescription" />
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/logo_mini_set"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <Button
             android:id="@+id/btn_back"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:background="@drawable/ic_back_button"
-            app:layout_constraintBottom_toBottomOf="@+id/iv_circle_yellow"
             app:layout_constraintStart_toStartOf="@+id/line_left"
             app:layout_constraintTop_toTopOf="@+id/line_up" />
-
-        <ImageView
-            android:id="@+id/iv_circle_yellow"
-            android:layout_width="@dimen/label_size"
-            android:layout_height="@dimen/label_size"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/line_up"
-            app:srcCompat="@drawable/vector_label"
-            tools:ignore="ContentDescription" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_list_persons"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginTop="@dimen/margin_one"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/line_right"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/line_left"
-            app:layout_constraintTop_toBottomOf="@+id/iv_circle_yellow"
-            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintTop_toBottomOf="@+id/include"
             tools:itemCount="3"
             tools:listitem="@layout/item_persons_list" />
 

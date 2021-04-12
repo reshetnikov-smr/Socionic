@@ -5,6 +5,7 @@ import android.content.res.Resources
 import ru.d3st.socionic.R
 import ru.d3st.socionic.domain.Question
 import ru.d3st.socionic.domain.ResultCharacter
+import ru.d3st.socionic.utils.*
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -12,22 +13,7 @@ enum class BranchName {
     A, B, C, D
 }
 
-const val LSI: Int = 116
-const val LII: Int = 115
-const val EII: Int = 114
-const val ESI: Int = 113
-const val LIE: Int = 112
-const val LSE: Int = 111
-const val EIE: Int = 110
-const val ESE: Int = 109
-const val SEI: Int = 108
-const val SLI: Int = 107
-const val ILI: Int = 106
-const val IEI: Int = 105
-const val ILE: Int = 104
-const val IEE: Int = 103
-const val SLE: Int = 102
-const val SEE: Int = 101
+
 
 @Singleton
 class ResourcesHelper @Inject constructor(applicationContext: Application) {
@@ -62,12 +48,12 @@ class ResourcesHelper @Inject constructor(applicationContext: Application) {
                     Question(18, res.getString(R.string.q18), 19, 19),
                     Question(19, res.getString(R.string.q19), 21, 20),
                     Question(20, res.getString(R.string.q20), 22, 21),
-                    Question(21, res.getString(R.string.q21), SEE, SLE),
-                    Question(22, res.getString(R.string.q22), SLE, SEE),
+                    Question(21, res.getString(R.string.q21), NAPOLEON, JUKOV),
+                    Question(22, res.getString(R.string.q22), JUKOV, NAPOLEON),
                     Question(23, res.getString(R.string.q23), 25, 24),
                     Question(24, res.getString(R.string.q24), 26, 25),
-                    Question(25, res.getString(R.string.q25), IEE, ILE),
-                    Question(26, res.getString(R.string.q26), ILE, IEE),
+                    Question(25, res.getString(R.string.q25), GEKSLI, DON),
+                    Question(26, res.getString(R.string.q26), DON, GEKSLI),
             )
     val questionsAD =
             mutableListOf(
@@ -79,12 +65,12 @@ class ResourcesHelper @Inject constructor(applicationContext: Application) {
                     Question(32, res.getString(R.string.q32), 33, 33),
                     Question(33, res.getString(R.string.q33), 35, 34),
                     Question(34, res.getString(R.string.q34), 36, 35),
-                    Question(35, res.getString(R.string.q35), IEI, ILI),
-                    Question(36, res.getString(R.string.q36), ILI, IEI),
+                    Question(35, res.getString(R.string.q35), ESENIN, BALZAK),
+                    Question(36, res.getString(R.string.q36), BALZAK, ESENIN),
                     Question(37, res.getString(R.string.q37), 39, 38),
                     Question(38, res.getString(R.string.q38), 40, 39),
-                    Question(39, res.getString(R.string.q39), SLI, SEI),
-                    Question(40, res.getString(R.string.q40), SEI, SLI),
+                    Question(39, res.getString(R.string.q39), GABEN, DUMA),
+                    Question(40, res.getString(R.string.q40), DUMA, GABEN),
             )
     val questionsBC =
             mutableListOf(
@@ -97,12 +83,12 @@ class ResourcesHelper @Inject constructor(applicationContext: Application) {
 
                     Question(47, res.getString(R.string.q47), 49, 48),
                     Question(48, res.getString(R.string.q48), 50, 49),
-                    Question(49, res.getString(R.string.q49), ESE, EIE),
-                    Question(50, res.getString(R.string.q50), EIE, ESE),
+                    Question(49, res.getString(R.string.q49), HUGO, GAMLET),
+                    Question(50, res.getString(R.string.q50), GAMLET, HUGO),
                     Question(51, res.getString(R.string.q51), 53, 52),
                     Question(52, res.getString(R.string.q52), 54, 53),
-                    Question(53, res.getString(R.string.q53), LSE, LIE),
-                    Question(54, res.getString(R.string.q54), LIE, LSE),
+                    Question(53, res.getString(R.string.q53), SHTIRLITZ, LONDON),
+                    Question(54, res.getString(R.string.q54), LONDON, SHTIRLITZ),
             )
     val questionsBD =
             mutableListOf(
@@ -115,12 +101,12 @@ class ResourcesHelper @Inject constructor(applicationContext: Application) {
 
                     Question(61, res.getString(R.string.q61), 63, 62),
                     Question(62, res.getString(R.string.q62), 64, 63),
-                    Question(63, res.getString(R.string.q63), ESI, EII),
-                    Question(64, res.getString(R.string.q64), EII, ESI),
+                    Question(63, res.getString(R.string.q63), DRAIZER, DOSTOEVSKIY),
+                    Question(64, res.getString(R.string.q64), DOSTOEVSKIY, DRAIZER),
                     Question(65, res.getString(R.string.q65), 67, 66),
                     Question(66, res.getString(R.string.q66), 68, 67),
-                    Question(67, res.getString(R.string.q67), LII, LSI),
-                    Question(68, res.getString(R.string.q68), LSI, LII),
+                    Question(67, res.getString(R.string.q67), ROB, GORKIY),
+                    Question(68, res.getString(R.string.q68), GORKIY, ROB),
             )
 
     val mapDb: Map<Pair<BranchName, BranchName>, List<Question>> =
@@ -182,7 +168,7 @@ class ResourcesHelper @Inject constructor(applicationContext: Application) {
             ),
             ResultCharacter(
                     107,
-                    "Есенин",
+                    "Габен",
                     "СЛИ",
                     "Сенсорно-логический интроверт",
                     R.drawable.gaben,

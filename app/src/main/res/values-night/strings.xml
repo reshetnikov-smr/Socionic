@@ -19,12 +19,6 @@
     <string name="number_example">29</string>
     <string name="question_example">Доверяю приобретенному опыту, а не интуиции.</string>
     <string name="result">Результат</string>
-
-
-    <!--    Animation-->
-    <string name="character_recipient_to">To %1$s</string>
-    <string name="character_card_transition_name">character_card_%1$s</string>
-    <string name="character_card_detail_transition_name">character_card_detail</string>
     <string name="loading_error">loading_error</string>
     <string name="this_is_socionics">Соционика - это наука, изучающая процесс обмена информацией между человеком и внешним миром, т.е. каким образом люди воспринимают, перерабатывают и выдают информацию. Соционика помогает лучше понимать возможности и способности других людей, что можно ожидать от человека. Известный психолог К. Г. Юнг выделил два типа людей — экстравертов и интровертов. Люди также различаются по доминирующей функции, которая бывает мыслительной, эмоционально чувствующей, ощущающей или интуитивной. Типовая дифференциация отмечается со столь раннего возраста, что можно говорить о ней как о врожденной.</string>
     <string name="about_app">О приложении Socionic</string>
@@ -32,4 +26,24 @@
     <string name="what_psychotype">Что такое психотип?</string>
     <string name="ocionics">OCIONICS</string>
     <string name="recognize_yourself">Recognize yourself</string>
+    <!--    Compatibility-->
+    <string name="tojd">Тождественные</string>
+    <string name="dual">Дуал</string>
+    <string name="akt">Активация</string>
+    <string name="zerk">Зеркальные</string>
+    <string name="zak">Исполнитель</string>
+    <string name="rev">Подконтрольный</string>
+    <string name="del">Деловые</string>
+    <string name="mirj">Миражные</string>
+    <string name="sego">СуперЭго</string>
+    <string name="ppol">Противоположность</string>
+    <string name="kvtoj">Квазитождественные</string>
+    <string name="konf">Конфликтные</string>
+    <string name="rods">Родственные</string>
+    <string name="pdual">Полудуал</string>
+    <!--    Animation-->
+    <string name="character_recipient_to">To %1$s</string>
+    <string name="character_card_transition_name">character_card_%1$s</string>
+    <string name="character_card_detail_transition_name">character_card_detail</string>
+
 </resources>

@@ -7,6 +7,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/iv_background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back_night_long"
+        tools:ignore="ContentDescription" />
+
     <Button
         android:id="@+id/btn_back"
         android:layout_width="48dp"
@@ -28,7 +39,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/gradient_back"
             android:orientation="vertical">
 
             <ImageView
@@ -37,35 +47,36 @@
                 android:layout_height="100dp"
                 android:layout_marginTop="@dimen/margin_one"
                 android:layout_marginBottom="@dimen/margin_one"
-                app:srcCompat="@drawable/quan"
+                app:srcCompat="@drawable/quan_light"
                 tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/about_app"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                style="@style/TitleLightText"
                 android:background="@color/purple_text"
                 android:gravity="center"
                 android:paddingTop="@dimen/half_margin"
                 android:paddingBottom="@dimen/half_margin"
                 android:text="@string/about_app"
-                android:textColor="@color/yellow_text"
-                android:textSize="24sp" />
+ />
 
             <TextView
                 android:id="@+id/tv_desc_app"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/montserat_200"
+                style="@style/MainText"
                 android:paddingStart="@dimen/margin_24"
                 android:paddingTop="@dimen/half_margin"
                 android:paddingEnd="@dimen/margin_24"
                 android:paddingBottom="@dimen/half_margin"
                 android:text="@string/this_is_socionics"
-                android:textSize="16sp" />
+                />
 
             <TextView
                 android:id="@+id/about_psychotype"
+                style="@style/TitleLightText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/purple_text"
@@ -73,20 +84,19 @@
                 android:paddingTop="@dimen/half_margin"
                 android:paddingBottom="@dimen/half_margin"
                 android:text="@string/what_psychotype"
-                android:textColor="@color/yellow_text"
-                android:textSize="24sp" />
+                 />
 
             <TextView
                 android:id="@+id/tv_desc_psichotype"
+                style="@style/MainText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/montserat_200"
                 android:paddingStart="@dimen/margin_24"
                 android:paddingTop="@dimen/half_margin"
                 android:paddingEnd="@dimen/margin_24"
                 android:paddingBottom="@dimen/half_margin"
                 android:text="@string/desc_psychotype"
-                android:textSize="16sp" />
+                 />
 
         </LinearLayout>
     </ScrollView>

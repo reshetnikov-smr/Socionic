@@ -36,6 +36,17 @@
             android:orientation="vertical"
             app:layout_constraintGuide_end="@dimen/double_margin" />
 
+        <ImageView
+            android:id="@+id/iv_back_night"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/height_back_long"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/back_night_long"
+            tools:ignore="ContentDescription" />
+
         <Button
             android:id="@+id/btn_back"
             android:layout_width="48dp"
@@ -61,7 +72,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif"
-            android:textColor="@color/purple_text"
+            android:textColor="@color/white"
             android:textSize="48sp"
             app:layout_constraintBottom_toBottomOf="@+id/iv_circle_yellow"
             app:layout_constraintEnd_toEndOf="@+id/iv_circle_yellow"
@@ -92,7 +103,7 @@
             android:gravity="center"
             android:padding="@dimen/margin_one"
             android:text="@{viewmodel.currentQuestion.text}"
-            android:textColor="@color/purple_text"
+            android:textColor="@color/white"
             android:textSize="18sp"
             app:layout_constraintEnd_toStartOf="@+id/line_right"
             app:layout_constraintStart_toStartOf="@+id/line_left"
@@ -102,13 +113,14 @@
         <Button
             android:id="@+id/btn_yes"
             style="@style/RoundedCornerButton"
-            android:foreground="?android:attr/selectableItemBackground"
             visibleGone="@{viewmodel.resultId == 0}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="275dp"
             android:fontFamily="@font/montserrat_500"
+            android:foreground="?android:attr/selectableItemBackground"
             android:text="@string/yes"
+            android:textColor="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btn_no"
             app:layout_constraintHorizontal_bias="0.5"
@@ -117,13 +129,14 @@
         <Button
             android:id="@+id/btn_no"
             style="@style/RoundedCornerButton"
-            android:foreground="?android:attr/selectableItemBackground"
             visibleGone="@{viewmodel.resultId == 0}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="275dp"
             android:fontFamily="@font/montserrat_500"
+            android:foreground="?android:attr/selectableItemBackground"
             android:text="@string/no"
+            android:textColor="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"

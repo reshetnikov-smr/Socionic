@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewModel"
+            type="ru.d3st.socionic.compability.comparison.ComparisonViewModel" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_background"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/height_back_long"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/back_night_long"
+            tools:ignore="ContentDescription" />
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/ic_back_button"
+            app:layout_constraintStart_toStartOf="@+id/left_line"
+            app:layout_constraintTop_toTopOf="@+id/guideline_up" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/character_primary"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="32dp"
+            android:src="@{viewModel.mainCharacter.portrait}"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="2dp"
+            app:layout_constraintEnd_toStartOf="@+id/character_secondary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/character_secondary"
+            tools:src="@drawable/dostoevskiy" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/character_secondary"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="32dp"
+            android:src="@{viewModel.secondaryCharacter.portrait}"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/character_primary"
+            app:layout_constraintTop_toTopOf="@+id/guideline_up"
+            tools:src="@drawable/shtirliz" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="32dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/left_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/right_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="16dp" />
+
+        <TextView
+            android:id="@+id/tv_character_main"
+            style="@style/MainText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@{viewModel.mainCharacter.name}"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="@+id/character_primary"
+            app:layout_constraintStart_toStartOf="@+id/character_primary"
+            app:layout_constraintTop_toBottomOf="@+id/character_primary"
+            tools:text="@string/dostoevsky" />
+
+        <TextView
+            android:id="@+id/tv_character_secondary"
+            style="@style/MainText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@{viewModel.secondaryCharacter.name}"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="@+id/character_secondary"
+            app:layout_constraintStart_toStartOf="@+id/character_secondary"
+            app:layout_constraintTop_toBottomOf="@+id/character_secondary"
+            tools:text="@string/shtirlic" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/MainText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="164dp"
+            android:text="@{viewModel.compatTitle}"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline_up"
+            tools:text="@string/dual" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/right_line"
+            app:layout_constraintStart_toStartOf="@+id/left_line"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title">
+
+            <TextView
+                android:id="@+id/tv_description"
+                style="@style/MainText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@{viewModel.compatDescription}"
+                android:textSize="14sp"
+                tools:text="@string/description_example" />
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
