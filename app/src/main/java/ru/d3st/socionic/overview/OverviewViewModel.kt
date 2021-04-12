@@ -6,12 +6,13 @@ import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
 import ru.d3st.socionic.domain.ResultCharacter
-import ru.d3st.socionic.questions.ResourcesHelper
+import ru.d3st.socionic.utils.ResourcesHelper
 import timber.log.Timber
 
 class OverviewViewModel @AssistedInject constructor(
     @Assisted private val category: Int,
-    resources: ResourcesHelper): ViewModel() {
+    resources: ResourcesHelper
+): ViewModel() {
 
     val characters = mutableListOf<ResultCharacter>()
 

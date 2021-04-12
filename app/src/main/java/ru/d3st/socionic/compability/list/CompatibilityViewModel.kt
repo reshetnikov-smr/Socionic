@@ -8,8 +8,8 @@ import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
 import ru.d3st.socionic.domain.Comparison
-import ru.d3st.socionic.questions.ResourcesHelper
 import ru.d3st.socionic.utils.CompatibilityHelper
+import ru.d3st.socionic.utils.ResourcesHelper
 import ru.d3st.socionic.utils.asComparisonData
 
 class CompatibilityViewModel @AssistedInject constructor(

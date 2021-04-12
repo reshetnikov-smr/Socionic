@@ -5,6 +5,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import ru.d3st.socionic.domain.Question
+import ru.d3st.socionic.utils.BranchName
+import ru.d3st.socionic.utils.ResourcesHelper
 import timber.log.Timber
 import javax.inject.Inject
 

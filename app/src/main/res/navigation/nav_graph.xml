@@ -85,6 +85,9 @@
         <action
             android:id="@+id/action_compatibilityFragment_to_comparisonFragment"
             app:destination="@id/comparisonFragment" />
+        <action
+            android:id="@+id/action_compatibilityFragment_to_fragmentOverview"
+            app:destination="@id/fragmentOverview" />
     </fragment>
     <fragment
         android:id="@+id/comparisonFragment"
@@ -99,5 +102,8 @@
         <argument
             android:name="compat"
             app:argType="string" />
+        <action
+            android:id="@+id/action_comparisonFragment_to_compatibilityFragment"
+            app:destination="@id/compatibilityFragment" />
     </fragment>
 </navigation>

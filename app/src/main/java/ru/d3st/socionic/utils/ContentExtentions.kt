@@ -18,6 +18,6 @@ fun Context.themeColor(
     return obtainStyledAttributes(
         intArrayOf(themeAttrId)
     ).use {
-        it.getColor(0, Color.MAGENTA)
+        it.getColor(0, Color.TRANSPARENT)
     }
 }

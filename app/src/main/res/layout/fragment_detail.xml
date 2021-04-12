@@ -12,6 +12,7 @@
         android:id="@+id/slide_detail_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:transitionName="@string/character_card_detail_transition_name"
         app:layoutDescription="@xml/fragment_detail_xml_slide_scene">
 
         <androidx.constraintlayout.widget.Guideline
@@ -112,5 +113,4 @@
                 tools:text="@string/desc_dostoevski" />
         </androidx.core.widget.NestedScrollView>
     </androidx.constraintlayout.motion.widget.MotionLayout>
-
 </layout>

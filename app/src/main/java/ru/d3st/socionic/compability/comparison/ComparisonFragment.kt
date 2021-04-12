@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import dagger.hilt.android.AndroidEntryPoint
 import ru.d3st.socionic.databinding.FragmentComparisonBinding
@@ -36,6 +37,12 @@ class ComparisonFragment:Fragment() {
         binding.viewModel = viewModel
 
         binding.lifecycleOwner = this
+
+        binding.btnBack.setOnClickListener {
+            val action = ComparisonFragmentDirections
+                    .actionComparisonFragmentToCompatibilityFragment(args.main)
+              findNavController().navigate(action)
+        }
 
         return binding.root
     }

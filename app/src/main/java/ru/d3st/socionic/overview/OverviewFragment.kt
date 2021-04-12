@@ -95,6 +95,13 @@ class OverviewFragment : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        postponeEnterTransition()
+        view.doOnPreDraw { startPostponedEnterTransition() }
+    }
+
+
     private fun navigateToStartScreen() {
         val action = OverviewFragmentDirections.actionFragmentOverviewToStartFragment()
         findNavController().navigate(action)
@@ -127,9 +134,5 @@ class OverviewFragment : Fragment() {
     }
 
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        postponeEnterTransition()
-        view.doOnPreDraw { startPostponedEnterTransition() }
-    }
+
 }

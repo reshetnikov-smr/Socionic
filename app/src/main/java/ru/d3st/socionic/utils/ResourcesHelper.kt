@@ -1,11 +1,10 @@
-package ru.d3st.socionic.questions
+package ru.d3st.socionic.utils
 
 import android.app.Application
 import android.content.res.Resources
 import ru.d3st.socionic.R
 import ru.d3st.socionic.domain.Question
 import ru.d3st.socionic.domain.ResultCharacter
-import ru.d3st.socionic.utils.*
 import javax.inject.Inject
 import javax.inject.Singleton
 
