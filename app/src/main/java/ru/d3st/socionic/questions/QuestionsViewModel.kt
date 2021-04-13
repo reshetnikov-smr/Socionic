@@ -5,9 +5,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import ru.d3st.socionic.domain.Question
-import ru.d3st.socionic.utils.BranchName
-import ru.d3st.socionic.utils.ResourcesHelper
+import ru.d3st.socionic.utils.*
 import timber.log.Timber
+import java.util.*
 import javax.inject.Inject
 
 @HiltViewModel
@@ -16,7 +16,10 @@ class QuestionsViewModel @Inject constructor(val res: ResourcesHelper) : ViewMod
     //List questions
     val questions = mutableListOf<Question>()
 
+    //point count data odd and even answers
+    private var nextPoint = 13
 
+    //Следующий вопрос
     private var nextQuestion = 0
 
     //result liveData for send data that the test result is ready
@@ -29,107 +32,120 @@ class QuestionsViewModel @Inject constructor(val res: ResourcesHelper) : ViewMod
     val progress: LiveData<Int>
         get() = _progress
 
-
-    private val resultFirstBranch = MutableLiveData<BranchName>()
-    private val resultSecondBranch = MutableLiveData<BranchName>()
-
     //save current question
     private val _currentQuestion = MutableLiveData<Question>()
     val currentQuestion: LiveData<Question>
         get() = _currentQuestion
 
-    val answers: MutableMap<Int, String> = mutableMapOf()
+    val answers: SortedMap<Int, Int> = sortedMapOf()
 
     init {
         //load 1st part question
         questions.addAll(res.questions1)
+        questions.addAll(res.questions2)
+
         //get 1st question from question list
         _currentQuestion.value = questions.first()
-        Timber.i("${currentQuestion.value!!.number}")
     }
 
     fun onClickYes() {
-        nextQuestion = currentQuestion.value!!.nextYes
-        val number = currentQuestion.value!!.number
-        if (number % 2 == 0) setUserResult("even") else setUserResult("odd")
-        Timber.i("Question ${currentQuestion.value!!.number} and chet ${answers.filter { it.value == "even" }.size}  nechet ${answers.filter { it.value == "odd" }.size}")
-        setQuestion(currentQuestion.value!!.number)
+        nextQuestion = currentQuestion.value?.nextYes ?: 1
+        val number = currentQuestion.value?.number
+        if (number != null) {
+            if (number % 2 == 0) setUserResult(EVEN) else setUserResult(ODD)
+        }
+        currentQuestion.value?.let { setQuestion(it.number) }
     }
 
     fun onCLickNo() {
-        nextQuestion = currentQuestion.value!!.nextNo
-        setUserResult("pass")
-        Timber.i("Question ${currentQuestion.value!!.number}")
-        setQuestion(currentQuestion.value!!.number)
+        nextQuestion = currentQuestion.value?.nextNo ?: 1
+        setUserResult(PASS)
+        currentQuestion.value?.let { setQuestion(it.number) }
 
     }
 
-    private fun setUserResult(answer: String) {
-        val number = currentQuestion.value!!.number
+    private fun setUserResult(answer: Int) {
+        val number = currentQuestion.value?.number
         answers[number] = answer
-        changeProgress()
+        changeProgress(answers.size)
     }
 
 
     fun removeLastResult() {
         if (answers.isNotEmpty()) {
-            answers.remove(answers.maxOf { it.key })
+            nextQuestion = answers.lastKey()
+            //remove last answer information
+            answers.remove(answers.lastKey())
+            //reset result
             if (_resultId.value != 0) _resultId.value = 0
-            changeProgress()
+            //change progressbar
+            changeProgress(answers.size)
             Timber.i("remove last result answers contained ${answers.size}")
-            nextQuestion = answers.maxOfOrNull { it.key } ?: 1
-            changeProgress()
             setCurrentQuestion(nextQuestion)
         }
     }
 
 
     private fun setQuestion(number: Int) {
-        var nextPoint = 0
-        when (number) {
-            6 -> {
-                resultFirstBranch.value =
-                        if (answers.filter { it.value == "even" }.size > answers.filter { it.value == "odd" }.size) BranchName.B else BranchName.A
-                Timber.i("Question $number and first branch ${resultFirstBranch.value} and second branch ${resultSecondBranch.value}")
-                questions.addAll(res.questions2)
 
-            }
+        when (number) {
+
             12 -> {
+                removeFinishQuestions()
+                var oddCount: Int
+                var evenCount: Int
+                val firstSixAnswers = answers.filter { it.key <= 6 }
+                oddCount = firstSixAnswers.filter { it.value == ODD }.size
+                evenCount = firstSixAnswers.filter { it.value == EVEN }.size
+                val branchFirst = if (evenCount > oddCount) BranchName.B else BranchName.A
+                Timber.i("Answers first six is $branchFirst")
+
                 val lastSixResult = answers.filter { it.key > 6 }
-                resultSecondBranch.value =
-                        if (lastSixResult.filter { it.value == "even" }.size > lastSixResult.filter { it.value == "odd" }.size) BranchName.D else BranchName.C
-                Timber.i("Question $number and first branch ${resultFirstBranch.value} and second branch ${resultSecondBranch.value}")
-                setNextBranchQuestions(resultFirstBranch.value, resultSecondBranch.value)
+                oddCount = lastSixResult.filter { it.value == ODD }.size
+                evenCount = lastSixResult.filter { it.value == EVEN }.size
+                val branchSecond = if (evenCount > oddCount) BranchName.D else BranchName.C
+                Timber.i("Answers second six is $branchSecond")
+                setNextBranchQuestions(branchFirst, branchSecond)
                 nextQuestion = questions.first { it.number > 12 }.number
-                nextPoint = nextQuestion + 6
+                nextPoint = nextQuestion + 5
             }
         }
 
-        if (number > 12 && number == nextPoint) {
+        if (number == nextPoint) {
+
             val lastSixResult = answers.filter { it.key > 12 }
-            if (lastSixResult.filter { it.value == "even" }.size > lastSixResult.filter { it.value == "odd" }.size) nextQuestion + 4
+            val oddCount = lastSixResult.filter { it.value == ODD }.size
+            val evenCount = lastSixResult.filter { it.value == EVEN }.size
+            if (evenCount > oddCount) nextQuestion += 4
+            Timber.i("Next questions $nextQuestion")
         }
         if (nextQuestion > 100) {
             _resultId.value = nextQuestion
         } else {
             setCurrentQuestion(nextQuestion)
         }
+    }
 
-
+    private fun removeFinishQuestions() {
+        questions.removeAll(questions.filter { it.number > 12 })
+        Timber.i("Questions contain ${questions.size} elements")
     }
 
     private fun setCurrentQuestion(number: Int) {
         _currentQuestion.value = questions.firstOrNull { it.number == number }
+        Timber.i("Current question number ${currentQuestion.value?.number}")
+        Timber.i("Current count odd = ${answers.filter { it.value == ODD }.size} ")
+        Timber.i("Current count even = ${answers.filter { it.value == EVEN }.size} ")
     }
 
 
-    private fun setNextBranchQuestions(one: BranchName?, two: BranchName?) {
+    private fun setNextBranchQuestions(one: BranchName, two: BranchName) {
         val finishQuestions = res.mapDb[Pair(one, two)]
         finishQuestions?.let { questions.addAll(it) }
     }
 
-    private fun changeProgress() {
-        _progress.value = answers.size
+    private fun changeProgress(progressCount: Int) {
+        _progress.value = progressCount
     }
 
 

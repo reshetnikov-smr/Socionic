@@ -19,3 +19,7 @@ const val DON: Int = 104
 const val GEKSLI: Int = 103
 const val JUKOV: Int = 102
 const val NAPOLEON: Int = 101
+
+const val ODD: Int = 1
+const val EVEN: Int = 2
+const val PASS: Int = 0

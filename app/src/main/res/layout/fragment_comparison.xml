@@ -134,7 +134,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="@{viewModel.compatDescription}"
-                android:textSize="14sp"
+                android:textSize="18sp"
                 tools:text="@string/description_example" />
         </androidx.core.widget.NestedScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,7 +13,6 @@ import com.google.android.material.transition.MaterialContainerTransform
 import dagger.hilt.android.AndroidEntryPoint
 import ru.d3st.socionic.R
 import ru.d3st.socionic.databinding.FragmentCompabilityBinding
-import ru.d3st.socionic.utils.COMPATIBILITY
 import ru.d3st.socionic.utils.themeColor
 import javax.inject.Inject
 
@@ -63,10 +62,10 @@ class CompatibilityFragment : Fragment() {
         binding.rvCharactersCompatibility.adapter = adapter
         adapter.submitList(viewModel.comparisonList.value)
 
+        //binding BackButton
         binding.btnBack.setOnClickListener {
-            val action = CompatibilityFragmentDirections
-                    .actionCompatibilityFragmentToFragmentOverview(COMPATIBILITY)
-            findNavController().navigate(action)
+            //заменяет нажатие кнопки назад в системе Андроид
+            requireActivity().onBackPressedDispatcher.onBackPressed()
         }
 
         return binding.root

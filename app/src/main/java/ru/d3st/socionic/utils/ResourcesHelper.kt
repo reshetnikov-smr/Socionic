@@ -37,7 +37,7 @@ class ResourcesHelper @Inject constructor(applicationContext: Application) {
                     Question(11, res.getString(R.string.q11), 12, 12),
                     Question(12, res.getString(R.string.q12), 13, 13),
             )
-    val questionsAC =
+    private val questionsAC =
             mutableListOf(
                     Question(13, res.getString(R.string.q13), 14, 14),
                     Question(14, res.getString(R.string.q14), 15, 15),
@@ -54,7 +54,7 @@ class ResourcesHelper @Inject constructor(applicationContext: Application) {
                     Question(25, res.getString(R.string.q25), GEKSLI, DON),
                     Question(26, res.getString(R.string.q26), DON, GEKSLI),
             )
-    val questionsAD =
+    private val questionsAD =
             mutableListOf(
                     Question(27, res.getString(R.string.q27), 28, 28),
                     Question(28, res.getString(R.string.q28), 29, 29),
@@ -71,7 +71,7 @@ class ResourcesHelper @Inject constructor(applicationContext: Application) {
                     Question(39, res.getString(R.string.q39), GABEN, DUMA),
                     Question(40, res.getString(R.string.q40), DUMA, GABEN),
             )
-    val questionsBC =
+    private val questionsBC =
             mutableListOf(
                     Question(41, res.getString(R.string.q41), 42, 42),
                     Question(42, res.getString(R.string.q42), 43, 43),
@@ -89,7 +89,7 @@ class ResourcesHelper @Inject constructor(applicationContext: Application) {
                     Question(53, res.getString(R.string.q53), SHTIRLITZ, LONDON),
                     Question(54, res.getString(R.string.q54), LONDON, SHTIRLITZ),
             )
-    val questionsBD =
+    private val questionsBD =
             mutableListOf(
                     Question(55, res.getString(R.string.q55), 56, 56),
                     Question(56, res.getString(R.string.q56), 57, 57),

@@ -3,7 +3,6 @@ package ru.d3st.socionic.start
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.animation.ValueAnimator
-import android.graphics.drawable.AnimationDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -17,7 +16,6 @@ import ru.d3st.socionic.utils.OVERVIEW
 class StartFragment : Fragment() {
 
     private lateinit var binding: FragmentStartBinding
-    private lateinit var rocketAnimation: AnimationDrawable
 
 
     override fun onCreateView(

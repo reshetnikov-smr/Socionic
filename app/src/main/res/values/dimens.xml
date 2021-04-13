@@ -6,8 +6,6 @@
     <dimen name="margin_36">36dp</dimen>
     <dimen name="btn_main_height">65dp</dimen>
     <dimen name="margin_one">16dp</dimen>
-    <dimen name="label_size">80dp</dimen>
-    <dimen name="avatar_size">160dp</dimen>
     <dimen name="half_margin">8dp</dimen>
     <dimen name="width_rv_character">150dp</dimen>
     <dimen name="height_back_long">1000dp</dimen>

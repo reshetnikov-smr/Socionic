@@ -30,20 +30,20 @@ class ComparisonViewModel @AssistedInject constructor(
 
     private fun getCompatibilityDescription(compatTitle: String, res: CompatibilityHelper): String {
         return when (compatTitle) {
-            res.tojd -> res.tojd_desc
-            res.dual -> res.dual_desc
-            res.akt -> res.akt_desc
-            res.zerk -> res.zerk_desc
-            res.zak -> res.zak_desc
-            res.rev -> res.rev_desc
-            res.del -> res.del_desc
-            res.mirj -> res.mirj_desc
-            res.sego -> res.sego_desc
-            res.ppol -> res.ppol_desc
-            res.kvtoj -> res.kvtoj_desc
-            res.konf -> res.konf_desc
-            res.rods -> res.rods_desc
-            res.pdual -> res.pdual_desc
+            res.tojd -> res.tojdDesc
+            res.dual -> res.dualDesc
+            res.akt -> res.aktDesc
+            res.zerk -> res.zerkDesc
+            res.zak -> res.zakDesc
+            res.rev -> res.revDesc
+            res.del -> res.delDesc
+            res.mirj -> res.mirjDesc
+            res.sego -> res.segoDesc
+            res.ppol -> res.ppolDesc
+            res.kvtoj -> res.kvtojDesc
+            res.konf -> res.konfDesc
+            res.rods -> res.rodsDesc
+            res.pdual -> res.pdualDesc
             else -> "Unknown Compatibility"
         }
     }

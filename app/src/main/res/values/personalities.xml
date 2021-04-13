@@ -1,19 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="jack" translatable="false">Джек Лондон</string>
-    <string name="don" translatable="false">Дон Кихот</string>
-    <string name="balzak" translatable="false">Бальзак</string>
-    <string name="napoleon" translatable="false">Наполеон</string>
-    <string name="jukov" translatable="false">Жуков</string>
-    <string name="geksly" translatable="false">Гексли</string>
-    <string name="max" translatable="false">Максим Горький</string>
-    <string name="gaben" translatable="false">Габен</string>
-    <string name="duma" translatable="false">Дюма</string>
-    <string name="gugo" translatable="false">Гюго</string>
     <string name="dostoevsky" translatable="false">Достоевский</string>
-    <string name="esenin" translatable="false">Есин</string>
-    <string name="rob" translatable="false">Робеспьер</string>
-    <string name="draizer" translatable="false">Драйзер</string>
     <string name="shtirlic" translatable="false">Штирлиц</string>
-    <string name="gamlet" translatable="false">Гамлет</string>
 </resources>

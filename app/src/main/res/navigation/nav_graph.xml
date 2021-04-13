@@ -2,17 +2,18 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
     app:startDestination="@id/splashFragment">
 
     <fragment
         android:id="@+id/startFragment"
         android:name="ru.d3st.socionic.start.StartFragment"
         android:label="fragment_start"
-        tools:layout="@layout/fragment_start" >
+        tools:layout="@layout/fragment_start">
         <action
             android:id="@+id/action_startFragment_to_questionsFragment"
-            app:destination="@id/questionsFragment" />
+            app:destination="@id/questionsFragment"
+            app:popUpTo="@id/questionsFragment"
+            app:popUpToInclusive="false" />
         <action
             android:id="@+id/action_startFragment_to_fragmentOverview"
             app:destination="@id/fragmentOverview" />
@@ -23,7 +24,8 @@
     <fragment
         android:id="@+id/questionsFragment"
         android:name="ru.d3st.socionic.questions.QuestionsFragment"
-        android:label="QuestionsFragment" >
+        android:label="QuestionsFragment"
+        tools:layout="@layout/fragment_questions">
         <action
             android:id="@+id/action_questionsFragment_to_fragmentDetail"
             app:destination="@id/fragmentDetail" />
@@ -34,7 +36,7 @@
     <fragment
         android:id="@+id/fragmentDetail"
         android:name="ru.d3st.socionic.detail.DetailFragment"
-        android:label="FragmentDetail" >
+        android:label="FragmentDetail">
         <argument
             android:name="resultId"
             app:argType="integer" />
@@ -45,7 +47,7 @@
     <fragment
         android:id="@+id/fragmentOverview"
         android:name="ru.d3st.socionic.overview.OverviewFragment"
-        android:label="FragmentOverview" >
+        android:label="FragmentOverview">
         <action
             android:id="@+id/action_fragmentOverview_to_fragmentDetail"
             app:destination="@id/fragmentDetail" />
@@ -62,7 +64,7 @@
     <fragment
         android:id="@+id/aboutFragment"
         android:name="ru.d3st.socionic.about.AboutFragment"
-        android:label="AboutFragment" >
+        android:label="AboutFragment">
         <action
             android:id="@+id/action_aboutFragment_to_startFragment"
             app:destination="@id/startFragment" />
@@ -70,7 +72,7 @@
     <fragment
         android:id="@+id/splashFragment"
         android:name="ru.d3st.socionic.start.SplashFragment"
-        android:label="SplashFragment" >
+        android:label="SplashFragment">
         <action
             android:id="@+id/action_splashFragment_to_startFragment"
             app:destination="@id/startFragment" />
@@ -78,7 +80,7 @@
     <fragment
         android:id="@+id/compatibilityFragment"
         android:name="ru.d3st.socionic.compability.list.CompatibilityFragment"
-        android:label="CompatibilityFragment" >
+        android:label="CompatibilityFragment">
         <argument
             android:name="characterId"
             app:argType="integer" />
@@ -92,7 +94,7 @@
     <fragment
         android:id="@+id/comparisonFragment"
         android:name="ru.d3st.socionic.compability.comparison.ComparisonFragment"
-        android:label="ComparisonFragment" >
+        android:label="ComparisonFragment">
         <argument
             android:name="main"
             app:argType="integer" />
