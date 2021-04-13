@@ -4,6 +4,7 @@
 Стек:
 
 + Architecture MVVM
++ DataBinding
 + Navigation
 + DataBinding
 + MotionLayout
