@@ -7,7 +7,6 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import ru.d3st.socionic.domain.Question
 import ru.d3st.socionic.utils.*
 import timber.log.Timber
-import java.util.*
 import javax.inject.Inject
 
 @HiltViewModel
@@ -37,7 +36,7 @@ class QuestionsViewModel @Inject constructor(val res: ResourcesHelper) : ViewMod
     val currentQuestion: LiveData<Question>
         get() = _currentQuestion
 
-    val answers: SortedMap<Int, Int> = sortedMapOf()
+    val answers: HashMap<Int, Int> = hashMapOf()
 
     init {
         //load 1st part question
@@ -65,17 +64,21 @@ class QuestionsViewModel @Inject constructor(val res: ResourcesHelper) : ViewMod
     }
 
     private fun setUserResult(answer: Int) {
-        val number = currentQuestion.value?.number
-        answers[number] = answer
+        currentQuestion.value?.let {
+            answers[it.number] = answer
+        }
+
+
+
         changeProgress(answers.size)
     }
 
 
     fun removeLastResult() {
         if (answers.isNotEmpty()) {
-            nextQuestion = answers.lastKey()
+            nextQuestion = answers.maxOf { it.key }
             //remove last answer information
-            answers.remove(answers.lastKey())
+            answers.remove(answers.maxOf { it.key })
             //reset result
             if (_resultId.value != 0) _resultId.value = 0
             //change progressbar
