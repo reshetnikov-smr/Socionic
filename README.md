@@ -1,6 +1,8 @@
 # Socionic
 Приложение для прохождения теста по определению соционического типа
 
+Google play: https://play.google.com/store/apps/details?id=ru.d3st.socionic
+
 Стек:
 
 + Architecture MVVM
