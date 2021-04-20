@@ -12,6 +12,7 @@ Google play: https://play.google.com/store/apps/details?id=ru.d3st.socionic
 + MotionLayout
 + Animation
 + RecyclerView
++ Hilt (DI)
 
 
 
