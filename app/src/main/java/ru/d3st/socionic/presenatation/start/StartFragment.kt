@@ -45,13 +45,10 @@ class StartFragment : Fragment() {
 
 
         binding.btnFast.setOnClickListener {
-            navigateToFastGame()
+            navigateToTest()
         }
         binding.btnOverview.setOnClickListener {
             navigateToOverview(COMPATIBILITY)
-        }
-        binding.btnFull.setOnClickListener {
-            navigateToTest()
         }
         binding.ivCircleLeft.setOnClickListener {
             navigateToFAQ()
@@ -71,11 +68,6 @@ class StartFragment : Fragment() {
 
     private fun navigateToOverview(category: Int) {
         val action = StartFragmentDirections.actionStartFragmentToFragmentOverview(category)
-        findNavController().navigate(action)
-    }
-
-    private fun navigateToFastGame() {
-        val action = StartFragmentDirections.actionStartFragmentToQuestionsFragment()
         findNavController().navigate(action)
     }
 
