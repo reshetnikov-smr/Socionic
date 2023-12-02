@@ -3,7 +3,7 @@ package ru.d3st.socionic.utils
 import android.app.Application
 import android.content.res.Resources
 import ru.d3st.socionic.R
-import ru.d3st.socionic.domain.Compatibility
+import ru.d3st.socionic.models.Compatibility
 import javax.inject.Inject
 import javax.inject.Singleton
 

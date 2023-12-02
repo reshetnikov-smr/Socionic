@@ -1,8 +1,8 @@
 package ru.d3st.socionic.utils
 
 import ru.d3st.socionic.R
-import ru.d3st.socionic.domain.Comparison
-import ru.d3st.socionic.domain.Compatibility
+import ru.d3st.socionic.models.Comparison
+import ru.d3st.socionic.models.Compatibility
 
 fun Compatibility.asComparisonData(): List<Comparison> {
 

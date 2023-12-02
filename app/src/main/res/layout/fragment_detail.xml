@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewmodel"
-            type="ru.d3st.socionic.detail.DetailViewModel" />
+            type="ru.d3st.socionic.presenatation.detail.DetailViewModel" />
     </data>
 
     <androidx.constraintlayout.motion.widget.MotionLayout
@@ -99,7 +99,7 @@
 
             <TextView
                 android:id="@+id/tv_description"
-                setPersonDescription="@{viewmodel.result.descriptions}"
+                text="@{viewmodel.result.descriptions}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_one"

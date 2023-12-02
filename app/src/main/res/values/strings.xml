@@ -67,5 +67,6 @@
     <!--    Animation-->
     <string name="character_card_transition_name">character_card_%1$s</string>
     <string name="character_card_detail_transition_name">character_card_detail</string>
+    <string name="back">back</string>
 
 </resources>
