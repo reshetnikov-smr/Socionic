@@ -37,25 +37,13 @@
             android:layout_width="0dp"
             android:layout_height="@dimen/btn_main_height"
             android:layout_marginStart="@dimen/margin_36"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="240dp"
             android:layout_marginEnd="@dimen/margin_36"
-            android:text="@string/fast_start"
+            android:text="@string/start_test"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/btn_full"
-            style="@style/RoundedCornerButton"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/btn_main_height"
-            android:layout_marginTop="16dp"
-            android:text="@string/full_test"
-            android:textColor="@color/white"
-            app:layout_constraintEnd_toEndOf="@+id/btn_fast"
-            app:layout_constraintStart_toStartOf="@+id/btn_fast"
-            app:layout_constraintTop_toBottomOf="@+id/btn_fast" />
 
         <Button
             android:id="@+id/btn_overview"
@@ -65,9 +53,11 @@
             android:layout_marginTop="16dp"
             android:text="@string/compatibility"
             android:textColor="@color/white"
-            app:layout_constraintEnd_toEndOf="@+id/btn_full"
-            app:layout_constraintStart_toStartOf="@+id/btn_full"
-            app:layout_constraintTop_toBottomOf="@+id/btn_full" />
+            android:layout_marginStart="@dimen/margin_36"
+            android:layout_marginEnd="@dimen/margin_36"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_fast" />
 
         <ImageView
             android:id="@+id/iv_circle_left"
