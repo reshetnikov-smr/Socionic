@@ -7,7 +7,7 @@
 
         <variable
             name="viewmodel"
-            type="ru.d3st.socionic.compability.list.CompatibilityViewModel" />
+            type="ru.d3st.socionic.presenatation.compability.list.CompatibilityViewModel" />
     </data>
 
         <androidx.constraintlayout.motion.widget.MotionLayout

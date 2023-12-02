@@ -7,7 +7,7 @@
 
         <variable
             name="viewmodel"
-            type="ru.d3st.socionic.overview.OverviewViewModel" />
+            type="ru.d3st.socionic.presenatation.overview.OverviewViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

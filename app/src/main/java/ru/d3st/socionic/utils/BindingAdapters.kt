@@ -42,13 +42,13 @@ fun setImageResource(imageView: ImageView, resource: Int) {
 //set Number Question on Question Fragment
 @BindingAdapter("setNumQuestion")
 fun TextView.setNumberQuestion(item: Int) {
-    text = item.plus(1).toString()
+    text = item.toString()
 }
 
 //set data to progress bar  Question Fragment
 @BindingAdapter("setDataProgress")
-fun ProgressBar.setProgress(count: Int) {
-    progress = (count*5)
+fun ProgressBar.calculateProgress(count: Int) {
+    progress = (count-1)
 }
 
 @BindingAdapter("setPersonDescription")

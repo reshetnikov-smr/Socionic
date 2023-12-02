@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/startFragment"
-        android:name="ru.d3st.socionic.start.StartFragment"
+        android:name="ru.d3st.socionic.presenatation.start.StartFragment"
         android:label="fragment_start"
         tools:layout="@layout/fragment_start">
         <action
@@ -23,7 +23,7 @@
     </fragment>
     <fragment
         android:id="@+id/questionsFragment"
-        android:name="ru.d3st.socionic.questions.QuestionsFragment"
+        android:name="ru.d3st.socionic.presenatation.questions.QuestionsFragment"
         android:label="QuestionsFragment"
         tools:layout="@layout/fragment_questions">
         <action
@@ -35,7 +35,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentDetail"
-        android:name="ru.d3st.socionic.detail.DetailFragment"
+        android:name="ru.d3st.socionic.presenatation.detail.DetailFragment"
         android:label="FragmentDetail">
         <argument
             android:name="resultId"
@@ -46,7 +46,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentOverview"
-        android:name="ru.d3st.socionic.overview.OverviewFragment"
+        android:name="ru.d3st.socionic.presenatation.overview.OverviewFragment"
         android:label="FragmentOverview">
         <action
             android:id="@+id/action_fragmentOverview_to_fragmentDetail"
@@ -63,7 +63,7 @@
     </fragment>
     <fragment
         android:id="@+id/aboutFragment"
-        android:name="ru.d3st.socionic.about.AboutFragment"
+        android:name="ru.d3st.socionic.presenatation.about.AboutFragment"
         android:label="AboutFragment">
         <action
             android:id="@+id/action_aboutFragment_to_startFragment"
@@ -71,7 +71,7 @@
     </fragment>
     <fragment
         android:id="@+id/splashFragment"
-        android:name="ru.d3st.socionic.start.SplashFragment"
+        android:name="ru.d3st.socionic.presenatation.start.SplashFragment"
         android:label="SplashFragment">
         <action
             android:id="@+id/action_splashFragment_to_startFragment"
@@ -79,7 +79,7 @@
     </fragment>
     <fragment
         android:id="@+id/compatibilityFragment"
-        android:name="ru.d3st.socionic.compability.list.CompatibilityFragment"
+        android:name="ru.d3st.socionic.presenatation.compability.list.CompatibilityFragment"
         android:label="CompatibilityFragment">
         <argument
             android:name="characterId"
@@ -93,7 +93,7 @@
     </fragment>
     <fragment
         android:id="@+id/comparisonFragment"
-        android:name="ru.d3st.socionic.compability.comparison.ComparisonFragment"
+        android:name="ru.d3st.socionic.presenatation.compability.comparison.ComparisonFragment"
         android:label="ComparisonFragment">
         <argument
             android:name="main"
