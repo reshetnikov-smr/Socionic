@@ -5,7 +5,7 @@ import androidx.annotation.StringRes
 /**
  * Model of answer
  */
-data class GulenkoQuestion(
+data class QuestionForm(
     @StringRes val question: Int,
     val goalType: SocionicAttribute,
 )
