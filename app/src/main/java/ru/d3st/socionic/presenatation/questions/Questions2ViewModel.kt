@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
-import ru.d3st.socionic.models.GulenkoQuestion
-import ru.d3st.socionic.data.GulenkoQuestions
+import ru.d3st.socionic.models.QuestionForm
+import ru.d3st.socionic.data.StorageQuestions2
 import ru.d3st.socionic.models.SocionicAttribute
 import ru.d3st.socionic.utils.IdConverter
 import ru.d3st.socionic.utils.TypeCalculator
@@ -13,8 +13,8 @@ import timber.log.Timber
 import javax.inject.Inject
 
 @HiltViewModel
-class GeneralQuestionsViewModel @Inject constructor(
-    private val res: GulenkoQuestions,
+class Questions2ViewModel @Inject constructor(
+    private val res: StorageQuestions2,
     private val typeCalculator: TypeCalculator,
     private val converter: IdConverter,
 ) : ViewModel() {
@@ -37,12 +37,12 @@ class GeneralQuestionsViewModel @Inject constructor(
     val currentQuestionNumber: LiveData<Int> = _currentQuestionNumber
 
     //save current question
-    private val _currentQuestion = MutableLiveData<GulenkoQuestion?>()
+    private val _currentQuestion = MutableLiveData<QuestionForm?>()
 
     /**
      * Current question data
      */
-    val currentQuestion: LiveData<GulenkoQuestion?> = _currentQuestion
+    val currentQuestion: LiveData<QuestionForm?> = _currentQuestion
 
     init {
         amountQuestions = res.questions.size

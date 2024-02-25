@@ -13,7 +13,7 @@ import ru.d3st.socionic.databinding.FragmentQuestionsBinding
 @AndroidEntryPoint
 class QuestionsFragment : Fragment() {
 
-    private val viewModel: GeneralQuestionsViewModel by viewModels()
+    private val viewModel: Questions2ViewModel by viewModels()
 
     private lateinit var binding: FragmentQuestionsBinding
 
