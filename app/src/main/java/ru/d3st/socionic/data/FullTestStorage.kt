@@ -10,8 +10,9 @@ import javax.inject.Singleton
  * Questions for full test version 3
  */
 @Singleton
-class StorageQuestions3 @Inject constructor() {
-    val questions3 = mapOf(
+class FullTestStorage @Inject constructor() : QuestionStorage {
+
+    override val questions: HashMap<Int, QuestionForm> = hashMapOf(
         1 to QuestionForm(R.string.f1, SocionicAttribute.RACIONAL),
         2 to QuestionForm(R.string.f2, SocionicAttribute.IRRACIONAL),
         3 to QuestionForm(R.string.f3, SocionicAttribute.RACIONAL),

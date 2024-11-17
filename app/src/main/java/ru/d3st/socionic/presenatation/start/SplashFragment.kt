@@ -13,6 +13,7 @@ import ru.d3st.socionic.R
 /**
  * Screen with start animation
  */
+@Deprecated("Will be changed on compose version")
 class SplashFragment: Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {

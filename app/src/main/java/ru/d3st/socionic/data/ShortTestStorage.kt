@@ -10,9 +10,9 @@ import javax.inject.Singleton
  * Test by Gulenko
  */
 @Singleton
-class StorageQuestions2 @Inject constructor() {
+class ShortTestStorage @Inject constructor() : QuestionStorage {
 
-    val questions = mapOf(
+    override val questions: HashMap<Int, QuestionForm> = hashMapOf(
         1 to QuestionForm(R.string.g1, SocionicAttribute.EXTRA),
         2 to QuestionForm(R.string.g2, SocionicAttribute.INTRA),
         3 to QuestionForm(R.string.g3, SocionicAttribute.EXTRA),

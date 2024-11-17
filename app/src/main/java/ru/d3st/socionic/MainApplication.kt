@@ -12,17 +12,14 @@ class MainApplication: Application() {
 
     private val applicationScope = CoroutineScope(Dispatchers.Default)
 
+    override fun onCreate() {
+        super.onCreate()
+        delayedInit()
+    }
 
     private fun delayedInit() {
         applicationScope.launch {
             Timber.plant(Timber.DebugTree())
         }
     }
-
-    override fun onCreate() {
-        super.onCreate()
-        delayedInit()
-    }
-
-
 }

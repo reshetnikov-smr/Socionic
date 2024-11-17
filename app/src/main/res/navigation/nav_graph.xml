@@ -20,15 +20,14 @@
         <action
             android:id="@+id/action_startFragment_to_aboutFragment"
             app:destination="@id/aboutFragment" />
-        <action
-            android:id="@+id/action_startFragment_to_questions3Fragment"
-            app:destination="@id/questions3Fragment" />
     </fragment>
     <fragment
         android:id="@+id/questionsFragment"
         android:name="ru.d3st.socionic.presenatation.questions.QuestionsFragment"
-        android:label="QuestionsFragment"
-        tools:layout="@layout/fragment_questions">
+        android:label="QuestionsFragment">
+        <argument
+            android:name="testType"
+            app:argType="integer" />
         <action
             android:id="@+id/action_questionsFragment_to_fragmentDetail"
             app:destination="@id/fragmentDetail" />
@@ -46,9 +45,6 @@
         <action
             android:id="@+id/action_fragmentDetail_to_questionsFragment"
             app:destination="@id/questionsFragment" />
-        <action
-            android:id="@+id/action_fragmentDetail_to_questions3Fragment"
-            app:destination="@id/questions3Fragment" />
     </fragment>
     <fragment
         android:id="@+id/fragmentOverview"
@@ -113,17 +109,5 @@
         <action
             android:id="@+id/action_comparisonFragment_to_compatibilityFragment"
             app:destination="@id/compatibilityFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/questions3Fragment"
-        android:name="ru.d3st.socionic.presenatation.questions.Questions3Fragment"
-        android:label="Questions3Fragment"
-        tools:layout="@layout/fragment_questions3">
-        <action
-            android:id="@+id/action_questions3Fragment_to_startFragment"
-            app:destination="@id/startFragment" />
-        <action
-            android:id="@+id/action_questions3Fragment_to_fragmentDetail"
-            app:destination="@id/fragmentDetail" />
     </fragment>
 </navigation>

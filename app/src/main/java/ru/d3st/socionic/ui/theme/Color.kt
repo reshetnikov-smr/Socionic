@@ -76,6 +76,7 @@ val md_theme_dark_scrim = Color(0xFF000000)
 
 @Stable
 val sc_theme_yellow_tint = Color(0xFFFFE0B2)
+val sc_theme_purple_tint = Color(0xFF5D5C84)
 
 
 val gradientColors = listOf(
