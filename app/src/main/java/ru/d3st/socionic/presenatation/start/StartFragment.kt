@@ -8,6 +8,7 @@ import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.platform.ViewCompositionStrategy
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import ru.d3st.socionic.models.presentation.TestType
 import ru.d3st.socionic.presenatation.compose.StartScreen
 import ru.d3st.socionic.ui.theme.SocionicTheme
 
@@ -51,12 +52,14 @@ class StartFragment : Fragment() {
     }
 
     private fun navigateToFastTest() {
-        val action = StartFragmentDirections.actionStartFragmentToQuestionsFragment()
+        val action =
+            StartFragmentDirections.actionStartFragmentToQuestionsFragment(TestType.SHORT.value)
         findNavController().navigate(action)
     }
 
     private fun navigateToFullTest() {
-        val action = StartFragmentDirections.actionStartFragmentToQuestions3Fragment()
+        val action =
+            StartFragmentDirections.actionStartFragmentToQuestionsFragment(TestType.FULL.value)
         findNavController().navigate(action)
     }
 

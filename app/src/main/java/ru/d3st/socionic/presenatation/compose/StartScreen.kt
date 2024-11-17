@@ -116,7 +116,10 @@ private fun LogoHeader(modifier: Modifier) {
     ) {
         HeadIconAnim(modifier)
         Column {
-            HeadLineText(stringRes = R.string.ocionics, modifier = modifier.padding(top = 24.dp))
+            HeadLineText(
+                stringResource(id = R.string.ocionics),
+                modifier = modifier.padding(top = 24.dp)
+            )
             Text(
                 text = stringResource(id = R.string.recognize_yourself),
                 style = typography.headlineMedium,
@@ -147,7 +150,7 @@ fun AnimateIconTitle(
     @DrawableRes drawableRes: Int = R.drawable.ic_question_sign,
     labelAnim: String = "rotateImage",
 ) {
-    val infiniteTransition = rememberInfiniteTransition(label = labelAnim)
+    val infiniteTransition = rememberInfiniteTransition(label = "infinite transition")
     val rotate by infiniteTransition.animateFloat(
         initialValue = 0f,
         targetValue = 360f,
@@ -170,7 +173,6 @@ fun AnimateIconTitle(
             .graphicsLayer(rotationY = rotate),
         alignment = Alignment.Center,
         contentScale = ContentScale.Fit
-
     )
 }
 

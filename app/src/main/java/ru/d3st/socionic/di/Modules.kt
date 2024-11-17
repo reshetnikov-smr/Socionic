@@ -7,21 +7,16 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import ru.d3st.socionic.utils.CompatibilityHelper
 import ru.d3st.socionic.utils.ResourcesHelper
-import javax.inject.Singleton
 
 @InstallIn(SingletonComponent::class)
 @Module
-class Modules {
+class AppModule {
 
     @Provides
-    @Singleton
-    fun provideData(application: Application): ResourcesHelper {
-        return ResourcesHelper(application)
-    }
+    fun provideResourcesHelper(application: Application): ResourcesHelper =
+        ResourcesHelper(application)
 
     @Provides
-    @Singleton
-    fun provideCompatibility(application: Application): CompatibilityHelper {
-        return CompatibilityHelper(application)
-    }
+    fun provideCompatibilityHelper(application: Application): CompatibilityHelper =
+        CompatibilityHelper(application)
 }
