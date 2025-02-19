@@ -8,7 +8,7 @@ import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
 import ru.d3st.socionic.data.TypeDescriptions
-import ru.d3st.socionic.models.CharacterDescription
+import ru.d3st.socionic.models.presentation.CharacterDescription
 
 class DetailViewModel @AssistedInject constructor(
         res: TypeDescriptions,

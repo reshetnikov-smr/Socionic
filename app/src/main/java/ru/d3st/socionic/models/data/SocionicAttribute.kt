@@ -1,4 +1,4 @@
-package ru.d3st.socionic.models
+package ru.d3st.socionic.models.data
 
 /**
  * General socionic attributes

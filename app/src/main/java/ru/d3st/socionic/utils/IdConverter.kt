@@ -1,5 +1,6 @@
 package ru.d3st.socionic.utils
 
+import ru.d3st.socionic.models.presentation.SocionicTypes
 import javax.inject.Inject
 
 class IdConverter @Inject constructor(){

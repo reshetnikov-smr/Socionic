@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import ru.d3st.socionic.databinding.ItemPersonsListBinding
-import ru.d3st.socionic.models.CharacterDescription
+import ru.d3st.socionic.models.presentation.CharacterDescription
 
 class OverviewListAdapter(private val clickListener: CharacterClickListener) :
         ListAdapter<CharacterDescription, OverviewListAdapter.ViewHolder>(CharacterDiffCallback()) {

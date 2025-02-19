@@ -1,8 +1,8 @@
 package ru.d3st.socionic.utils
 
 import ru.d3st.socionic.R
-import ru.d3st.socionic.models.Comparison
-import ru.d3st.socionic.models.Compatibility
+import ru.d3st.socionic.models.presentation.Comparison
+import ru.d3st.socionic.models.presentation.Compatibility
 
 fun Compatibility.asComparisonData(): List<Comparison> {
 
@@ -22,5 +22,6 @@ fun Compatibility.asComparisonData(): List<Comparison> {
             Comparison(SHTIRLITZ,"Штирлиц", R.drawable.shtirliz, shtirlitz),
             Comparison(DOSTOEVSKIY,"Достоевский", R.drawable.dostoevskiy, dostoevskiy),
             Comparison(GEKSLI,"Гексли", R.drawable.geksli, heksli),
-            Comparison(DUMA,"Дюма", R.drawable.gaben, gaben))
+            Comparison(DUMA, "Дюма", R.drawable.gaben, gaben)
+    )
 }

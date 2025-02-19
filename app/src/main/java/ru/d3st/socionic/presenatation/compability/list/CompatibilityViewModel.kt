@@ -7,17 +7,17 @@ import androidx.lifecycle.ViewModelProvider
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
+import ru.d3st.socionic.data.CompatibilityHelper
 import ru.d3st.socionic.data.TypeDescriptions
-import ru.d3st.socionic.models.Comparison
-import ru.d3st.socionic.utils.CompatibilityHelper
+import ru.d3st.socionic.models.presentation.Comparison
 import ru.d3st.socionic.utils.asComparisonData
 
 class CompatibilityViewModel @AssistedInject constructor(
-        resources: TypeDescriptions,
-        compat: CompatibilityHelper,
-        @Assisted private val characterId: Int,
+    resources: TypeDescriptions,
+    compat: CompatibilityHelper,
+    @Assisted private val characterId: Int,
 
-        ) : ViewModel() {
+    ) : ViewModel() {
 
     val character = resources.characters.first { it.id == characterId }
 
