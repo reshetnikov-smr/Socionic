@@ -7,7 +7,7 @@
 
         <variable
             name="character"
-            type="ru.d3st.socionic.models.CharacterDescription" />
+            type="ru.d3st.socionic.models.presentation.CharacterDescription" />
     </data>
 
         <androidx.constraintlayout.widget.ConstraintLayout

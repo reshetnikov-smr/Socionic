@@ -5,16 +5,16 @@ import androidx.lifecycle.ViewModelProvider
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
+import ru.d3st.socionic.data.CompatibilityHelper
 import ru.d3st.socionic.data.TypeDescriptions
-import ru.d3st.socionic.utils.CompatibilityHelper
 import ru.d3st.socionic.utils.asComparisonData
 
 class ComparisonViewModel @AssistedInject constructor(
-        resources: TypeDescriptions,
-        compat: CompatibilityHelper,
-        @Assisted private val characters: Pair<Int, Int>,
+    resources: TypeDescriptions,
+    compat: CompatibilityHelper,
+    @Assisted private val characters: Pair<Int, Int>,
 
-        ) : ViewModel() {
+    ) : ViewModel() {
 
 
     val mainCharacter = resources.characters.first { it.id == characters.first }

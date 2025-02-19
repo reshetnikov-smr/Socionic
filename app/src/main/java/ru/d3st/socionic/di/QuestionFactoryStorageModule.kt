@@ -5,10 +5,10 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import ru.d3st.socionic.data.DefaultQuestionStorageFactory
 import ru.d3st.socionic.data.FullTestStorage
-import ru.d3st.socionic.data.QuestionStorage
 import ru.d3st.socionic.data.ShortTestStorage
-import ru.d3st.socionic.domain.storage.DefaultQuestionStorageFactory
+import ru.d3st.socionic.presenatation.questions.QuestionStorage
 import ru.d3st.socionic.presenatation.questions.QuestionStorageFactory
 import javax.inject.Qualifier
 

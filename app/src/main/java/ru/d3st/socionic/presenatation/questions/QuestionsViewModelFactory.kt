@@ -4,7 +4,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedInject
-import ru.d3st.socionic.data.QuestionStorage
 import ru.d3st.socionic.models.presentation.TestType
 import ru.d3st.socionic.utils.IdConverter
 import ru.d3st.socionic.utils.TypeCalculator

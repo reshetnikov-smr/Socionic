@@ -16,6 +16,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.requiredSize
 import androidx.compose.foundation.layout.size
@@ -31,9 +32,12 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import ru.d3st.socionic.R
+import ru.d3st.socionic.ui.theme.HammerSmithFamily
 import ru.d3st.socionic.ui.theme.sc_theme_yellow_tint
 import ru.d3st.socionic.ui.theme.typography
 import ru.d3st.socionic.utils.COMPATIBILITY
@@ -63,24 +67,27 @@ fun StartScreen(
             contentScale = ContentScale.Crop,
             alignment = Alignment.BottomCenter
         )
-        Column(modifier = modifier.fillMaxSize()) {
-            LogoHeader(modifier)
+        Column(
+            modifier = modifier.fillMaxSize(),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            LogoHeader()
             BaseButton(
                 R.string.fast_start,
                 modifier.padding(top = 100.dp),
-                typography.titleMedium,
+                typography.headlineLarge,
                 onStartTest
             )
             BaseButton(
                 R.string.full_test,
                 modifier.padding(top = 24.dp),
-                typography.titleMedium,
+                typography.headlineLarge,
                 onFullTest
             )
             BaseButton(
                 R.string.compatibility,
                 modifier.padding(top = 24.dp),
-                typography.titleMedium
+                typography.headlineLarge
             ) { onOverview.invoke(COMPATIBILITY) }
             Row(
                 modifier
@@ -107,45 +114,62 @@ fun StartScreen(
 
 
 @Composable
-private fun LogoHeader(modifier: Modifier) {
-    Row(
+private fun LogoHeader(modifier: Modifier = Modifier) {
+    Box(
         modifier = modifier
             .fillMaxWidth()
-            .padding(vertical = 24.dp),
-        horizontalArrangement = Arrangement.Center
+            .padding(top = 24.dp),
+        contentAlignment = Alignment.Center,
     ) {
-        HeadIconAnim(modifier)
-        Column {
-            HeadLineText(
-                stringResource(id = R.string.ocionics),
-                modifier = modifier.padding(top = 24.dp)
-            )
-            Text(
-                text = stringResource(id = R.string.recognize_yourself),
-                style = typography.headlineMedium,
-                modifier = modifier.padding(start = 32.dp),
-            )
+        Row(modifier = modifier.padding(start = 24.dp)) {
+            HeadIconAnim()
+            Column(
+                modifier = modifier
+                    .padding(top = 36.dp)
+                    .offset(x = (-24).dp)
+            ) {
+                Text(
+                    text = stringResource(id = R.string.ocionics),
+                    color = Color.White,
+                    fontSize = 48.sp,
+                    fontFamily = HammerSmithFamily,
+                    fontWeight = FontWeight.Medium
+                )
+                Box(
+                    modifier
+                        .align(Alignment.End)
+                        .wrapContentSize()
+                ) {
+                    Text(
+                        text = stringResource(id = R.string.recognize_yourself),
+                        color = sc_theme_yellow_tint,
+                        fontSize = 20.sp,
+                        fontFamily = HammerSmithFamily,
+                        modifier = modifier
+                            .offset(y = (-10).dp)
+                    )
+                }
+            }
         }
     }
 }
 
 @Composable
-private fun HeadIconAnim(modifier: Modifier) {
+private fun HeadIconAnim(modifier: Modifier = Modifier) {
     Box(
-        modifier = modifier
-            .size(105.dp)
+        modifier = modifier.size(105.dp)
     ) {
         Image(
             painter = painterResource(id = R.drawable.head),
             modifier = modifier.fillMaxSize(),
             contentDescription = null
         )
-        AnimateIconTitle(modifier)
+        AnimateQuestionSign(modifier)
     }
 }
 
 @Composable
-fun AnimateIconTitle(
+fun AnimateQuestionSign(
     modifier: Modifier = Modifier,
     @DrawableRes drawableRes: Int = R.drawable.ic_question_sign,
     labelAnim: String = "rotateImage",

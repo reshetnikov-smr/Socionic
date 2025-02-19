@@ -1,7 +1,7 @@
 package ru.d3st.socionic.data
 
 import ru.d3st.socionic.R
-import ru.d3st.socionic.models.CharacterDescription
+import ru.d3st.socionic.models.presentation.CharacterDescription
 import javax.inject.Inject
 import javax.inject.Singleton
 

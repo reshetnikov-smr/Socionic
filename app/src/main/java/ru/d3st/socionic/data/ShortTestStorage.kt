@@ -1,8 +1,9 @@
 package ru.d3st.socionic.data
 
 import ru.d3st.socionic.R
-import ru.d3st.socionic.models.QuestionForm
-import ru.d3st.socionic.models.SocionicAttribute
+import ru.d3st.socionic.models.data.SocionicAttribute
+import ru.d3st.socionic.models.presentation.QuestionForm
+import ru.d3st.socionic.presenatation.questions.QuestionStorage
 import javax.inject.Inject
 import javax.inject.Singleton
 

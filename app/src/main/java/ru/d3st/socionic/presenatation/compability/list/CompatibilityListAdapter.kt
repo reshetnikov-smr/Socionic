@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import ru.d3st.socionic.databinding.ItemCompatibilityListBinding
-import ru.d3st.socionic.models.Comparison
+import ru.d3st.socionic.models.presentation.Comparison
 
 class CompatibilityListAdapter(private val clickListener: CompatibilityClickListener) :
     ListAdapter<Comparison, CompatibilityListAdapter.ViewHolder>(CompatibilityDiffCallback()) {

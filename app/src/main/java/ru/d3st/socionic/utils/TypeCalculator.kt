@@ -1,6 +1,6 @@
 package ru.d3st.socionic.utils
 
-import ru.d3st.socionic.models.SocionicAttribute
+import ru.d3st.socionic.models.data.SocionicAttribute
 import javax.inject.Inject
 import javax.inject.Singleton
 

@@ -11,8 +11,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import ru.d3st.socionic.R
-import ru.d3st.socionic.data.QuestionStorage
-import ru.d3st.socionic.models.SocionicAttribute
+import ru.d3st.socionic.models.data.SocionicAttribute
 import ru.d3st.socionic.models.presentation.QuestionContent
 import ru.d3st.socionic.models.presentation.QuestionUiState
 import ru.d3st.socionic.presenatation.questions.action.QuestionEffect

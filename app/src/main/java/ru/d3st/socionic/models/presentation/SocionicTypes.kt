@@ -1,4 +1,4 @@
-package ru.d3st.socionic.utils
+package ru.d3st.socionic.models.presentation
 
 /**
  * All Socionic types
@@ -12,10 +12,10 @@ enum class SocionicTypes(val id: String, val oldId: Int) {
     SHTIRLITZ("ESTJ", 111),
     GAMLET("ENFJ", 110),
     HUGO("ESFJ", 109),
-    DUMA("ISFP",108),
-    GABEN("ISTP",107),
+    DUMA("ISFP", 108),
+    GABEN("ISTP", 107),
     BALZAK("INTP", 106),
-    ESENIN("INFP",105),
+    ESENIN("INFP", 105),
     DON("ENTP", 104),
     GEKSLI("ENFP", 103),
     JUKOV("ESTP", 102),
